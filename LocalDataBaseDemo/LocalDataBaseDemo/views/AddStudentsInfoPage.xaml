@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalDataBaseDemo.views.AddStudentsInfoPage"
+             Title="Add Student Information"
+             >
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" >
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Entry x:Name="firstname" Grid.Row="0" Placeholder="Enter Your FirstName"/>
+            <Entry x:Name="lastname" Grid.Row="1" Placeholder="Enter Your LastName"/>
+            <Entry x:Name="emailid" Grid.Row="2"  Placeholder="Enter Your Email-Id" Keyboard="Email"/>
+            <Entry x:Name="phonenumber" Grid.Row="3" Placeholder="Enter Your PhoneNumber" Keyboard="Telephone"/>
+            <Entry x:Name="password" Grid.Row="4" Placeholder="Enter Your Password" IsPassword="True"/>
+            <Entry x:Name="confirmpassword" Grid.Row="5" Placeholder="Enter Your ConfirmPassword" IsPassword="True"/>
+            <Entry x:Name="age" Grid.Row="6" Placeholder="Enter Your age" Keyboard="Numeric"/>
+            <Button Grid.Row="7" Text="Add Student" Clicked="SaveStudentInformation"/>
+        </Grid>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

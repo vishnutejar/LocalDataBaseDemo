@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalDataBaseDemo.views.StudentsInfoList"
+             Title="List Of Students">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddStduentInfo"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="studentlstview" HasUnevenRows="True"  ItemSelected="SelectStudentInfoItem" IsPullToRefreshEnabled="True" RefreshControlColor="Blue">
+                <ListView.Header>
+                    <ContentView Padding="0,5" BackgroundColor="White">
+                        <Label FontSize="Large" TextColor="BlueViolet"
+                   Text=" Students Information" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    </ContentView>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <Frame BackgroundColor="Wheat" BorderColor="Blue" HasShadow="True" Margin="10" Padding="5">
+                             <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                 <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="1" Grid.Column="0"   Source="icon.png" WidthRequest="50"  HeightRequest="50"/>
+                                    <Label Grid.Row="0" Grid.Column="1" FontSize="17" FontAttributes="Bold"  Text="{Binding FirstName}"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhNumber}" />
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding Email}"/>
+                                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding Branch}" />
+                            </Grid>   
+                            </Frame>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
