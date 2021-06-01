@@ -65,5 +65,19 @@ namespace LocalDataBaseDemo.views
             App.Database.DeleteStudentAsync(studentsInfo);
             RefreshData();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RefreshData();
+
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+
+        }
+
     }
 }
